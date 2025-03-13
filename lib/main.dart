@@ -29,12 +29,7 @@ class MyApp extends StatelessWidget {
       showSemanticsDebugger: false,
       builder: (context, child) {
         if (enableAccessibilityTool) child = AccessibilityTools(child: child);
-
-        child = MediaQuery(
-          data: MediaQuery.of(context) /* .copyWith(textScaler: MediaQuery.of(context).textScaler) */,
-          child: child!,
-        );
-        return child;
+        return child!;
       },
       home: const HomePage(),
     );

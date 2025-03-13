@@ -1,18 +1,17 @@
+**Open this document in a markdown previewer and reveal its true form!**
+
 # Accessibility Workshop
 
 
-Greetings, explorer! 
+> *Greetings, explorer! 
 You've entered an app where semantics and accessibility were overlooked. 
 Your task is to navigate through this digital landscape and concure critical issues. 
+> You won't be alone on this quest, you have been teamed up with a fellow developer to tackle the challenges together!
+> *
+> Don’t worry, the instruction below will guide you through every phase of the journey.
+Good luck, and remember, every improvement you make brings the app closer to victory!*
 
-You won't be alone on this quest — you have been teamed up with a fellow developer to tackle the challenges together!
 
-
-Don’t worry, the instruction below will guide you through every phase of the journey.
-
-Good luck, and remember, every improvement you make brings the app closer to victory! 
-
-Please don't be a noob. Open this document in a markdown previewer 
 
 
 ## Inventory
@@ -59,16 +58,13 @@ Go ahead and remove the images detected by screen readers from semantics
 
 # 3. Semantics properties
 
- 1. See all, but see all what? What action is this widget? 
+ 1. See all, but see all what? What action is this widget? Let's give our users a hint
 
 ![image info](./lib/assets/markdown/balance_card.png)
 
-2. We would like that the balance card has the explicit label 'Balance card' but that the children within are still detected by the screen readers 
+2. The button should be 48 x 48 
 
-$~$
-
-# Focus Semantics events 
-If we click on the See all text button we want to autofocus the second element of the list  
+3. We would like that the balance card has the explicit label 'Balance card' but that the children within are still detected by the screen readers 
 
 $~$
 
@@ -91,13 +87,9 @@ $~$
 
 # Chapter 2
 
-
-
-
-
 > *You have come a long way in your semantics journey and I salut you. 
 However much semantics counts. We also have to take into consideration other factors such as color contracts, text scalors etc. 
-The app has been fortified with a powerful Accessibility Scanner, a tool designed to unveil hidden flaws lurking in the shadows. Activate it in the main! No detail is too small. 
+The app has been fortified with a powerful Accessibility tool, a tool designed to unveil hidden flaws lurking in the shadows. Activate it in the main! No detail is too small. 
 > Inspect every corner, every button. But beware… the BottomSheets may hold secrets that others overlook.*
 
 $~$
@@ -108,7 +100,7 @@ Text scaling is set in the settings of the phone. So it's important that the app
 
 You can set minimum and maximum scale factors for your MaterialApp, which will ensure that all the text scales within the specified limits. Tighter boundaries require less effort to maintain readability and aesthetics.
 
-1. Use the Accessibility Scanner and increase the text scale factor to 2
+1. Use the Accessibility tool and increase the text scale factor to 2
 If you find any overflow errors you should correct them
 
 $~$
@@ -120,23 +112,14 @@ You find a flutter news paper on the floor which contains an intersting article 
 https://medium.com/@pomis172/properly-handling-text-scaling-in-flutter-313fe717816c
 
 
-Let's understand how the app looks
+# Contrast
+We have covered a lot already but lastly let's make sure that our app is clearly readable
+
+There are few tools that can check the conrast properly. There is the Accessibility scanner for Android. So if you are in posession of one 
 
 
 
 
-Semantics debugger 
-
-Transaction list modal : 
-- There is no button lets improve
-
-
-- Semantics properties
-- Exclude semantics
-- Annonce semantics
-- Focus Semantics events
-- Order
-Test
 
 
 
