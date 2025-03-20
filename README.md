@@ -1,6 +1,7 @@
 **Open this document in a markdown previewer and reveal its true form!**
 
-<br>
+
+<br><br><br>
 
 # Accessibility Workshop
 
@@ -17,9 +18,8 @@ Good luck, and remember, every improvement you make brings the app closer to vic
 
 ### Inventory 🎒
 In your inventory you find two screen readers;
-VoiceOver and TalkBack. Choose the one that is available for your device.<br>
-It will assist you in completing the quests
-
+VoiceOver and TalkBack. 
+<br>Choose the one that is available for your device as it will be needed throughout this workshop
 <br>
 
 
@@ -46,11 +46,14 @@ It will assist you in completing the quests
 ## The urge to merge 
 
 > *When merging semantics, don’t panic! Stay cool, stay chill no need for dramatics.<br>
-> We have detected areas where widget should be merged into a single semantic node <br>
-> You've been provided images to make the task at hand easier for you*
+> With the screen reader, explore the home page with ease,
+> Improve navigation — make browsing a breeze*
 
-With the screen reader, explore the home page with ease,
-Improve navigation — make browsing a breeze
+
+We have detected areas where widgets should be merged into a single semantic node <br>
+You've been provided images to make the task at hand easier for you
+
+
 <br>
 
 
@@ -65,6 +68,7 @@ Improve navigation — make browsing a breeze
 
 > *Not all elements are critical for navigating. Some objects in this world bring no value to the mighty screen reader. They are but decorative relics, mere distractions in the grand quest for accessibility!*
 <br>
+
 Let's go ahead and remove the images detected by screen readers from semantics
 
 <br>
@@ -75,26 +79,26 @@ Let's go ahead and remove the images detected by screen readers from semantics
 > *It is time to unlock the full power of your UI and grant your app the strength of clarity. <br>
 > Use the properties well, for with great accessibility comes great user experience*
 
-This is the component that needs improvement
+Here is the widget that needs improvement
 
 ![image info](./lib/assets/markdown/balance_card_see_all.png)
 
 
 <br>
 
-1. See all, but see all what? Let's give our users a hint
+1. See all, but see all what? Let's give our users a hint of what it revealed when clicking this button
    
 <br>
 
-2. Let's specify the action type
+2. Let's go ahead and specify the action type 
    
 <br>
 
-3. Flutter guidelines recommend making interactive elements, such as buttons and icons, at least 48x48. Go ahead and make the tap area 48 x 48 
+1. Flutter guidelines recommend making interactive elements, such as buttons, at least 48x48. <br>Go ahead and apply this to this text button
 
 <br>  
 
-4. We would like that the entire balance card has the explicit label 'Balance card' but that the children within are still detected by the screen readers 
+1. Lastly, You will give the entire balance card the explicit label 'Balance card'. But make sure that the children within are still detected by the screen readers 
 
 <br>
 
@@ -105,7 +109,7 @@ This is the component that needs improvement
 <br>
 
 On the balance card, elements that are hidden on the screen are detected by the screen reader <br>
-Figure out how you can hinder semantics nodes from detection whilst the hidden elements in the list are not displayed 
+Figure out how you can hinder semantics nodes from detection whilst they're hidden on the screen
 
 ![image info](./lib/assets/markdown/balance_card.png)
 
@@ -118,7 +122,7 @@ Figure out how you can hinder semantics nodes from detection whilst the hidden e
 
 <br>
 
-When arriving on the home page the title has to be read my the screen reader before arriving on the search bar
+When arriving on the home page you will make sure that the title is being read my the screen reader focusing on the search bar
 
 
 
@@ -143,7 +147,7 @@ However much semantics counts. We also have to take into consideration other fac
 
 <br>
 
-1. Use the Accessibility tools package toincrease the text scale factor to 2. If you find any overflow errors you should think of a way to correct them
+1. Use the Accessibility tools package to increase the text scale factor to 2. If you find any overflow errors you should think of a way to correct them
 
 ![image info](./lib/assets/markdown/accessibility_tools.png)
 <br>
@@ -167,7 +171,7 @@ There are few tools that can check the contrast properly. There is the Accessibi
 
 <br>
 
-We've made it easy for you.. You should be able to detect the color contrast errors simply by using your eyes 👀
+We've made it easy for you... You should be able to detect the color contrast errors simply by using your eyes 👀
 
 <br>
 
