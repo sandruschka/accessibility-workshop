@@ -36,7 +36,7 @@ VoiceOver and TalkBack.
 - [Chapter 2](#chapter-2)
   - [Text scaling](#text-scaling)
   - [Contrast](#contrast)
-  - [The Accessibility Audit 🚀](#the-accessibility-audit-)
+  - [Testing](#testing)
   
 <br>
 <br>
@@ -171,22 +171,27 @@ There are few tools that can check the contrast properly. There is the Accessibi
 
 <br>
 
-We've made it easy for you... You should be able to detect the color contrast errors simply by using your eyes 👀
+We've made it easy for you... You should be able to detect the most important color contrast errors simply by using your eyes 👀
 
 <br>
 
-## The Accessibility Audit 🚀
+## Testing
 
-> *Grab your gear and launch the Accessibility Inspector in Xcode. Let’s uncover any hidden obstacles and level up our app’s accessibility! 🔍
-> This powerful tool will scan our app and reveal hidden obstacles, giving us hints on what can be improved.
-> Fix all the issues, clear the path, and when you're done head over to the next tool!*
+> *Run those tests, don not wait till it is late,
+Inclusive design makes your app first-rate!*
 
-A the rare kind not bound to a Mac you are free to bypass this trial! While others must forge ahead, you may step aside, your path unburdened by this task.
+We have already created a test file in the /test folder. Have a look at it, and find out what you can learn from running the test and fix it!
+
+<br>
+
+____
 
 
+<br>
+<br>
 
-1. The app has been fortified with a powerful Accessibility Scanner, a tool designed to unveil hidden flaws lurking in the shadows. Activate it in the main! No detail is too small—inspect every corner, every button. But beware… the BottomSheets may hold secrets that others overlook.
-
+> *Explorer, you have journeyed far and wide, overcoming every accessibility challenge in your path.<br>
+You have mastered the tools, conquered the obstacles, and now, it is time to share your wisdom. Take what you have learned today and carry it forward, empower others and let's build inclusive experiences.*
 
     
 
