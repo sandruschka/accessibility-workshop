@@ -7,7 +7,7 @@ import 'theme/util.dart';
 
 void main() {
   runApp(const MyApp(
-    enableAccessibilityTool: true,
+    enableAccessibilityTool: false,
   ));
 }
 
