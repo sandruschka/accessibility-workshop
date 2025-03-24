@@ -1,6 +1,5 @@
 import 'package:accessibility_workshop/data/transactions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../modals/transaction_modal.dart';
 
@@ -69,21 +68,18 @@ class HomeSearchHeader extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Semantics.fromProperties(
-                  properties: const SemanticsProperties(sortKey: OrdinalSortKey(0)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Stay on top of your money",
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                      Text(
-                        "See how you're doing",
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                    ],
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Stay on top of your money",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    Text(
+                      "See how you're doing",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 20),
               ],
