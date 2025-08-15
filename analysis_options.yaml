@@ -1,1 +1,8 @@
 include: package:flutter_lints/flutter.yaml
+
+dart_code_metrics:
+  rules:
+    - avoid-missing-image-alt
+    - prefer-text-rich
+    - prefer-action-button-tooltip
+    - prefer-dedicated-media-query-method
