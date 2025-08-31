@@ -6,3 +6,6 @@ dart_code_metrics:
     - prefer-text-rich
     - prefer-action-button-tooltip
     - prefer-dedicated-media-query-method
+
+formatter:
+  trailing_commas: preserve
