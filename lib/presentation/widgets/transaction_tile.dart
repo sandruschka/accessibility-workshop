@@ -1,6 +1,5 @@
 import 'package:accessibility_workshop/data/transactions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 
 class TransactionTile extends StatelessWidget {
@@ -24,7 +23,7 @@ class TransactionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final listTile = ListTile(
-      // onTap: onTap,
+      onTap: onTap,
       title: Text(title),
       shape: const RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.all(Radius.circular(8))),
       subtitle: Text("${DateFormat.yMMMd().format(date).toString()} • $provider"),
@@ -38,10 +37,6 @@ class TransactionTile extends StatelessWidget {
       ),
     );
 
-    // TODO Remove Semantics
-    return Semantics.fromProperties(
-      properties: SemanticsProperties(button: onTap != null),
-      child: onTap != null ? GestureDetector(onTap: onTap, child: listTile) : listTile,
-    );
+    return onTap != null ? GestureDetector(onTap: onTap, child: listTile) : listTile;
   }
 }
