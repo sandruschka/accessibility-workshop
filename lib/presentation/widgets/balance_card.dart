@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 
 class BalanceCard extends StatefulWidget {
-  const BalanceCard({super.key});
+  const BalanceCard({super.key, this.seeAll = false});
+
+  @visibleForTesting
+  final bool seeAll;
 
   @override
   State<BalanceCard> createState() => _BalanceCardState();
 }
 
 class _BalanceCardState extends State<BalanceCard> {
-  bool seeAll = false;
+  late bool seeAll;
+
+  @override
+  void initState() {
+    super.initState();
+    seeAll = widget.seeAll;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +35,12 @@ class _BalanceCardState extends State<BalanceCard> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  BalanceText(
-                    trailingText: 'Today',
-                    leadingText: 'You have',
-                    amount: 1651,
-                  ),
-                  BalanceText(
-                    leadingText: 'You spent',
-                    trailingText: 'Since Nov 1st',
-                    amount: 778,
-                  ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BalanceText(trailingText: 'Today', leadingText: 'You have', amount: 1651),
+                BalanceText(leadingText: 'You spent', trailingText: 'Since Nov 1st', amount: 778),
+              ],
             ),
             const SizedBox(height: 20),
             const Divider(),
@@ -92,7 +90,7 @@ class _BalanceCardState extends State<BalanceCard> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -101,12 +99,7 @@ class _BalanceCardState extends State<BalanceCard> {
 }
 
 class BalanceText extends StatelessWidget {
-  const BalanceText({
-    super.key,
-    required this.trailingText,
-    required this.leadingText,
-    required this.amount,
-  });
+  const BalanceText({super.key, required this.trailingText, required this.leadingText, required this.amount});
 
   final String leadingText;
   final double amount;
@@ -114,22 +107,21 @@ class BalanceText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          leadingText,
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Theme.of(context).colorScheme.secondary),
-        ),
-        Text(
-          "€$amount",
-          style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
-        ),
-        Text(
-          trailingText,
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Theme.of(context).colorScheme.secondary),
-        ),
-      ],
+    return Flexible(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            leadingText,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Theme.of(context).colorScheme.secondary),
+          ),
+          Text("€$amount", style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold)),
+          Text(
+            trailingText,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Theme.of(context).colorScheme.secondary),
+          ),
+        ],
+      ),
     );
   }
 }

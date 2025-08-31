@@ -11,17 +11,11 @@ class HomeSearchHeader extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
-        ),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
       ),
       child: Stack(
         children: [
-          Image.network(
-            fit: BoxFit.cover,
-            'https://media.istockphoto.com/id/696299656/photo/money-tree.jpg?s=612x612&w=0&k=20&c=ymVGg_4l8FbfH-aBPw2DO0ZaVT7JwtlqAtaexPUa1go=',
-          ),
+          Image.asset(fit: BoxFit.cover, 'assets/header.jpg'),
           Padding(
             padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
             child: Column(
@@ -35,14 +29,15 @@ class HomeSearchHeader extends StatelessWidget {
                           final transaction = _findTransaction(value);
                           if (transaction == null) {
                             showModalBottomSheet(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return Container(
-                                    height: 300,
-                                    color: Theme.of(context).cardColor,
-                                    child: const Center(child: Text('No result found')),
-                                  );
-                                });
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 300,
+                                  color: Theme.of(context).cardColor,
+                                  child: const Center(child: Text('No result found')),
+                                );
+                              },
+                            );
                           } else {
                             showTransactionModal(
                               context: context,
@@ -71,14 +66,8 @@ class HomeSearchHeader extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Stay on top of your money",
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                    Text(
-                      "See how you're doing",
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
+                    Text("Stay on top of your money", style: Theme.of(context).textTheme.headlineSmall),
+                    Text("See how you're doing", style: Theme.of(context).textTheme.bodyLarge),
                   ],
                 ),
                 const SizedBox(height: 20),

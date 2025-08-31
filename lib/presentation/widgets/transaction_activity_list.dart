@@ -1,6 +1,6 @@
 import 'package:accessibility_workshop/data/transactions.dart';
+import 'package:accessibility_workshop/presentation/widgets/transaction_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../modals/transaction_modal.dart';
 
@@ -30,61 +30,24 @@ class TransactionActivityList extends StatelessWidget {
             children: [
               const SizedBox(height: 8),
               for (final transaction in transactionList)
-                TransactionCard(
-                  name: transaction.name,
+                TransactionTile(
+                  title: transaction.name,
                   date: transaction.date,
-                  provider: transaction.provider,
                   amount: transaction.amount,
+                  provider: transaction.provider,
                   type: transaction.type,
+                  onTap: () => showTransactionModal(
+                    context: context,
+                    name: transaction.name,
+                    date: transaction.date,
+                    amount: transaction.amount,
+                    provider: transaction.provider,
+                    type: transaction.type,
+                  ),
                 ),
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class TransactionCard extends StatelessWidget {
-  const TransactionCard({
-    super.key,
-    required this.name,
-    required this.date,
-    required this.provider,
-    required this.amount,
-    required this.type,
-  });
-
-  final String name;
-  final DateTime date;
-  final String provider;
-  final double amount;
-  final TransactionType type;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => showTransactionModal(
-        context: context,
-        name: name,
-        date: date,
-        amount: amount,
-        provider: provider,
-        type: type,
-      ),
-      child: Card(
-        margin: const EdgeInsets.symmetric(vertical: 4),
-        child: ListTile(
-          title: Text(name),
-          subtitle: Text("${DateFormat.yMMMd().format(date).toString()} • $provider"),
-          trailing: Text(
-            "${type == TransactionType.payment ? '-' : '+'}€ $amount",
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: type == TransactionType.payment
-                    ? Theme.of(context).colorScheme.error
-                    : Theme.of(context).colorScheme.primary),
-          ),
-        ),
       ),
     );
   }

@@ -3,12 +3,10 @@ import 'package:accessibility_workshop/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'theme/theme.dart';
-import 'theme/util.dart';
 
-void main() {
-  runApp(const MyApp(
-    enableAccessibilityTool: false,
-  ));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp(enableAccessibilityTool: false));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,9 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final brightness = View.of(context).platformDispatcher.platformBrightness;
 
-    TextTheme textTheme = createTextTheme(context, "AR One Sans", "ABeeZee");
-
-    MaterialTheme theme = MaterialTheme(textTheme);
+    MaterialTheme theme = const MaterialTheme(TextTheme());
 
     return MaterialApp(
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
