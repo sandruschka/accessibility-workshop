@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 
 class BalanceCard extends StatefulWidget {
-  const BalanceCard({super.key});
+  const BalanceCard({super.key, this.seeAll = false});
+
+  @visibleForTesting
+  final bool seeAll;
 
   @override
   State<BalanceCard> createState() => _BalanceCardState();
 }
 
 class _BalanceCardState extends State<BalanceCard> {
-  bool seeAll = false;
+  late bool seeAll;
+
+  @override
+  void initState() {
+    super.initState();
+    seeAll = widget.seeAll;
+  }
 
   @override
   Widget build(BuildContext context) {
